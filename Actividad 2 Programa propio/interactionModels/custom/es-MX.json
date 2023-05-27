@@ -1,0 +1,89 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "recomendación helados",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": [
+            "ayuda",
+            "que hace esta skill",
+            "como usar",
+            "como uso la skill"
+          ]
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": [
+            "hasta luego",
+            "adios",
+            "cerrar",
+            "cierra recomendacion de helados",
+            "cierra la skill"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "CustomFlavorIntent",
+          "slots": [
+            {
+              "name": "flavor",
+              "type": "AMAZON.SearchQuery",
+              "samples": [
+                "{flavor}"
+              ]
+            }
+          ],
+          "samples": [
+            "sabor {flavor}",
+            "algo de sabor {flavor}",
+            "quizas de sabor {flavor}",
+            "que tal {flavor}",
+            "prueba {flavor}"
+          ]
+        }
+      ],
+      "types": []
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "CustomFlavorIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "flavor",
+              "type": "AMAZON.SearchQuery",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.854503006343.1392629377545"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.854503006343.1392629377545",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "No tengo informacion o recomedacion sobre este sabor de helado, prueba con otro sabor, como por ejemplo, chocolate"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "7"
+}

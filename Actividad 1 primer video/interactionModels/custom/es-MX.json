@@ -1,0 +1,89 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "curiosidades de programación",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": [
+            "como uso la skill",
+            "como usar",
+            "que hace esta skill",
+            "ayuda"
+          ]
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": [
+            "cierra la skill",
+            "cierra curiosidades de programacion",
+            "cerrar",
+            "adios",
+            "hasta luego"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "CustomLanguageIntent",
+          "slots": [
+            {
+              "name": "language",
+              "type": "AMAZON.SearchQuery",
+              "samples": [
+                "{language}"
+              ]
+            }
+          ],
+          "samples": [
+            "prueba {language}",
+            "qué sabes de {language}",
+            "dime algo sobre {language}",
+            "que tal {language}",
+            "dime una curiosidad sobre {language}"
+          ]
+        }
+      ],
+      "types": []
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "CustomLanguageIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "language",
+              "type": "AMAZON.SearchQuery",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.451643099761.1525282078692"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.451643099761.1525282078692",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "No cuento con informacion respecto a ese lenguaje, intenta probar con otro lenguaje, como Phyton"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "7"
+}
